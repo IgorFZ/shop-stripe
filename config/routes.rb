@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   resources :products
 
-  root 'products#index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get 'checkout/new', to: 'checkout#new', as: 'new_checkout'
+  post 'checkout', to: 'checkout#create', as: 'checkout'
+  get 'checkout/success', to: 'checkout#success', as: 'checkout_success'
+  get 'checkout/cancel', to: 'checkout#cancel', as: 'checkout_cancel'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root 'products#index'
 end

@@ -32,6 +32,9 @@ gem "redis", "~> 4.0"
 
 gem 'stripe'
 
+gem 'net-http'
+gem 'uri', '0.10.0'
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 

@@ -1,0 +1,6 @@
+<%= form_tag "#{@stripe_checkout_session.url}", id: 'checkout-form', method: :get do %>
+  <%= javascript_include_tag "https://js.stripe.com/v3", "data-stripe": Rails.configuration.stripe[:publishable_key] %>
+
+  <%= hidden_field_tag :sessionId, @stripe_checkout_session.id %>
+  <%= submit_tag "Proceed to Checkout" %>
+<% end %>

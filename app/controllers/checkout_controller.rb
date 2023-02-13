@@ -15,9 +15,6 @@ class CheckoutController < ApplicationController
     end
     
     def create
-
-        puts("CHEGOU AQUI ######################")
-    
         redirect_to checkout_success_path
     end
     

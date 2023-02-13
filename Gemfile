@@ -32,6 +32,8 @@ gem "redis", "~> 4.0"
 
 gem 'stripe'
 
+gem 'devise'
+
 gem 'net-http'
 gem 'uri', '0.10.0'
 

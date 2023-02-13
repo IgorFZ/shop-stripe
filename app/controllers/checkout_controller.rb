@@ -20,12 +20,9 @@ class CheckoutController < ApplicationController
     end
     
     def success
-        redirect_to root_path
     end
     
     def cancel
-        # Add your custom logic for handling a canceled payment here
-        # ...
     end
     
      private

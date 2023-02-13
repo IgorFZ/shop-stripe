@@ -2,9 +2,10 @@ class CheckoutController < ApplicationController
 
     def new
         @stripe_checkout_session = Stripe::Checkout::Session.create(
+            customer: current_user.stripe_customer_id,
             payment_method_types: ['card'],
             line_items: [{
-                price: 'price_1MZuauECi1aTPXPYEtmpRxAI',
+                price: params[:id],
                 quantity: 1
             }],
             mode: 'payment',

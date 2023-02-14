@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :products
+  resources :webhooks, only: [:create]
 
   get 'checkout/new', to: 'checkout#new', as: 'new_checkout'
   post 'checkout', to: 'checkout#create', as: 'checkout'

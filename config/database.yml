@@ -84,3 +84,4 @@ production:
   database: shop_stripe_production
   username: shop_stripe
   password: <%= ENV["SHOP_STRIPE_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>

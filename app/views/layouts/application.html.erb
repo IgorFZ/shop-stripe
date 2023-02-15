@@ -22,5 +22,21 @@
     <% end %>
     <hr>
     <%= yield %>
+    <% if @cart.present? %>
+      <hr>
+      <h1>Shopping cart</h1>
+      <p>Items: <%= @cart.size %></p>
+      <div class="cart">
+        <% @cart.each do |cart_item| %>
+          <div class="row">
+            <br>
+            <%= cart_item.name %>
+            <%= button_to "Remove from cart", remove_from_cart_path(cart_item), method: :delete %>
+          </div>
+        <% end %>
+        <br></br>
+      <%= button_to "Buy Now!", new_checkout_path, method: :get, params: {cart: @cart}, data: { disable_with: 'Validating...' } %>
+      </div>
+    <% end %>
   </body>
 </html>

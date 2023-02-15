@@ -2,4 +2,11 @@
     <h1>Sucess</h1>
     <p><strong>Checkout Status:</strong> <%= @session_with_expand.payment_status.camelize() %> </p>
     <p><strong>Amount Paid:</strong> <%= number_to_currency(@session_with_expand.amount_total/100.0) %> </p>
+    <p><strong>Products:</strong></p>
+    <ul>
+        <% @session_with_expand.line_items.data.each do |line_item| %>
+            <% product = Product.find_by(stripe_product_id: line_item.price.product) %>
+            <li><%= product.name%></li>
+        <% end %>
+    </ul>
 </div>

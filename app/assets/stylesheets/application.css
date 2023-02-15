@@ -19,8 +19,26 @@ body, table {
 }
 
 td, th{
-    width: 100px;
+    width: 200px;
     height: 30px;
     text-align: center;
+}
+
+.cart {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+    max-width: 300px;
+}
+
+.admin {
+    display: flex;
+    justify-content: space-between;
 }
 

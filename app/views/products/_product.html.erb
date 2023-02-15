@@ -2,6 +2,7 @@
   <tr>
     <td> <%= product %> </td>
     <td> <%= number_to_currency(product.price/100.0) %> </td>
+    <td> <%= product.currency %> </td>
     <td>
       <% if @cart.include?(product) %>
         <%= button_to "Remove from cart", remove_from_cart_path(product), method: :delete %>

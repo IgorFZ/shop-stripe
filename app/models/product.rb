@@ -16,4 +16,11 @@ class Product < ApplicationRecord
         })
         update(stripe_price_id: price_id.id, stripe_product_id: product.id)
     end
+
+    def to_builder
+        Jbuilder.new do |product|
+            product.price stripe_price_id
+            product.quantity 1
+        end
+    end
 end

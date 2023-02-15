@@ -1,7 +1,7 @@
 <div id="<%= dom_id product %>">
   <tr>
     <td> <%= product %> </td>
-    <td> <%= number_to_currency(product.price/100.0) %> </td>
+    <td> <%= product.price_cents %> </td>
     <td> <%= product.currency %> </td>
     <td>
       <% if @cart.include?(product) %>

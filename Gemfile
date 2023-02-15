@@ -34,6 +34,8 @@ gem 'stripe'
 
 gem 'devise'
 
+gem 'money-rails'
+
 gem 'net-http'
 gem 'uri', '0.10.0'
 

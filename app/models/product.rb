@@ -5,6 +5,8 @@ class Product < ApplicationRecord
     def to_s
         name
     end
+
+    monetize :price, as: :price_cents
     
     after_create do
         product = Stripe::Product.create(name: name)

@@ -1,3 +1,5 @@
 <div>
     <h1>Sucess</h1>
+    <p><strong>Checkout Status:</strong> <%= @session_with_expand.payment_status.camelize() %> </p>
+    <p><strong>Amount Paid:</strong> <%= number_to_currency(@session_with_expand.amount_total/100.0) %> </p>
 </div>

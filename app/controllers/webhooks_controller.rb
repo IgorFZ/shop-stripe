@@ -21,9 +21,10 @@ class WebhooksController < ApplicationController
             return
         end
 
-        Handle the event
+        #Handle the event
         case event.type
-        when 'checkout.session.completed'
+        when 'checkout.session.succeeded'
+            puts 'PaymentIntent was successful!'
             session = event.data.object
             puts "#####################"
             puts "SESSION"

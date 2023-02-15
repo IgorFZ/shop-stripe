@@ -22,9 +22,8 @@
     <% end %>
     <hr>
     <%= yield %>
-    <hr>
-    Visits: <%= @visit_count %>
     <% if @cart.present? %>
+      <hr>
       <h1>Shopping cart</h1>
       <p>Items: <%= @cart.size %></p>
       <div class="cart">
@@ -35,10 +34,9 @@
             <%= button_to "Remove from cart", remove_from_cart_path(cart_item), method: :delete %>
           </div>
         <% end %>
-      </div>
-      <br></br>
-      <%= @cart.collect { |item| item.to_builder.attributes! } %>
+        <br></br>
       <%= button_to "Buy Now!", new_checkout_path, method: :get, params: {cart: @cart}, data: { disable_with: 'Validating...' } %>
+      </div>
     <% end %>
   </body>
 </html>

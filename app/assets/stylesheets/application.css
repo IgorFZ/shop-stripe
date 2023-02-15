@@ -37,3 +37,8 @@ td, th{
     max-width: 300px;
 }
 
+.admin {
+    display: flex;
+    justify-content: space-between;
+}
+

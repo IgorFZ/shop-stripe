@@ -29,6 +29,7 @@ class CheckoutController < ApplicationController
      private
     
     def checkout_success_url
+        session[:cart] = []
         url_for(action: 'success', only_path: false, session_id: params[:session_id])
     end
     
